@@ -1,8 +1,8 @@
-"""initial companies table
+"""initial companies table and etc.
 
-Revision ID: 953932386d32
+Revision ID: 7c3e5fd2d0c1
 Revises: 
-Create Date: 2026-05-09 22:31:08.301037
+Create Date: 2026-05-10 00:27:58.072948
 
 """
 from typing import Sequence, Union
@@ -11,9 +11,8 @@ from alembic import op
 import sqlalchemy as sa
 import sqlmodel
 
-
 # revision identifiers, used by Alembic.
-revision: str = '953932386d32'
+revision: str = '7c3e5fd2d0c1'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -26,6 +25,12 @@ def upgrade() -> None:
     sa.Column('id', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
     sa.Column('name', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
     sa.Column('industry', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('overview', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('products', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('competitors', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('recent_news', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('raw_search_data', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
+    sa.Column('researched_at', sa.DateTime(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),
     sa.PrimaryKeyConstraint('id')

@@ -11,6 +11,11 @@ class CompanyRead(BaseModel):
     id: str
     name: str
     industry: str
+    overview: str
+    products: str
+    competitors: str
+    recent_news: str
+    researched_at: datetime
     created_at: datetime
     updated_at: datetime
 

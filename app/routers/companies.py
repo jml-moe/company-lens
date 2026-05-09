@@ -4,13 +4,16 @@ from sqlmodel import select
 from app.models.company import Company
 from app.models.database import SessionDep
 from app.schemas.company import CompanyCreate, CompanyListItem, CompanyRead
+from app.services.research.pipeline import research_company
 
 router = APIRouter(prefix="/companies", tags=["companies"])
 
 
 @router.post("", response_model=CompanyRead, status_code=status.HTTP_201_CREATED)
 async def create_company(payload: CompanyCreate, db: SessionDep) -> Company:
-    company = Company(name=payload.company_name.strip(), industry="")
+    name = payload.company_name.strip()
+    result = research_company(name)
+    company = Company(name=name, **result.model_dump())
     db.add(company)
     db.commit()
     db.refresh(company)
