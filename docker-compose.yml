@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: db-companylens
+    environment:
+      POSTGRES_USER: companylens
+      POSTGRES_PASSWORD: companylens
+      POSTGRES_DB: companylens
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
