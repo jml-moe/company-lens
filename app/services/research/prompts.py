@@ -23,6 +23,13 @@ Write ONE concise paragraph (~150 words) that captures the key facts from these 
 
 Requirements:
 - Include specific numbers, dates, percentages, and named entities when present
+Requirements:
+- Prefer sources in this order:
+  1) Official company domains (e.g., bca.co.id, investor relations, annual report, sustainability report)
+  2) Regulators and exchanges (.go.id, .gov, OJK, IDX)
+  3) Major financial media (Reuters, Bloomberg, FT, WSJ, CNBC)
+- If a fact only appears in low-credibility sources (blogs, SEO sites), mark it as "Low confidence".
+- Do not cite low-credibility sources unless no other sources exist.
 - Cite source URLs inline in parentheses, e.g. (source: https://...)
 - If results contradict, note the discrepancy
 - If results contain no useful info, output exactly: "No relevant information found."
@@ -48,6 +55,9 @@ PROFILE STRUCTURE (markdown):
 Output rules:
 - Each section must be a Markdown bullet list using '-' bullets.
 - 3-6 bullets per section, 1-2 sentences per bullet.
+- Use facts from high-credibility sources only.
+- If a fact is only supported by low-credibility sources, either omit it or flag as "Low confidence".
+- Always prefer the company’s own official sources if present.
 - Put sources at the end of each bullet: (source: https://...)
 - If summaries have no info for a section, output exactly one bullet:
 	- Information not available from collected sources.
