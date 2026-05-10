@@ -1,4 +1,4 @@
-.PHONY: dev db-up db-down db-logs migrate
+.PHONY: dev db-up db-down db-logs migrate revision 
 
 dev:
 	uv run uvicorn app.main:app --reload
@@ -14,3 +14,16 @@ db-logs:
 
 migrate:
 	uv run alembic upgrade head
+
+revision:
+	uv run alembic revision --autogenerate -m "$(MSG)"
+
+lint:
+	uv run ruff check .
+	
+format:
+	uv run ruff format .
+	uv run ruff check --fix .
+
+cli:
+	uv run company-lens $(ARGS)

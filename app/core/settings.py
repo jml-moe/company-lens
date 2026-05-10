@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str = "openai/text-embedding-3-small"
     CHROMA_PERSIST_DIR: str = "./chroma_data"
 
+    API_BASE_URL: str = "http://127.0.0.1:8000"
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 

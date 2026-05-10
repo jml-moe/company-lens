@@ -4,7 +4,7 @@ from app.services.research.prompts import QUERY_GENERATION_PROMPT
 from app.services.research.schemas import QueriesSchema
 
 SEARCH_CATEGORIES: dict[str, list[str]] = {
-    "financial": ["{name} annual revenue profit 2024"],
+    "financial": ["{name} annual revenue profit"],
     "leadership": ["{name} CEO executive leadership team"],
     "operations": ["{name} business model operations"],
     "market_position": ["{name} market share competitive landscape"],

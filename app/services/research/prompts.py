@@ -1,4 +1,3 @@
-
 QUERY_GENERATION_PROMPT = """You are a business research analyst. Generate 5 highly specific
 web search queries to research the company "{company_name}" beyond the standard categories.
 
@@ -46,11 +45,15 @@ PROFILE STRUCTURE (markdown):
 ## 9. ESG Considerations
 ## 10. Recent Developments
 
-Each section: 3-5 bullet points minimum. Include specific numbers, dates, named entities.
-Cite sources inline: (source: https://...). If a fact is not in the summaries, write
-"Information not available from collected sources" instead of fabricating.
+Output rules:
+- Each section must be a Markdown bullet list using '-' bullets.
+- 3-6 bullets per section, 1-2 sentences per bullet.
+- Put sources at the end of each bullet: (source: https://...)
+- If summaries have no info for a section, output exactly one bullet:
+	- Information not available from collected sources.
+- Do NOT add information that is not in the summaries.
 
-Length target: 2,000-3,000 words.
+Length target: 900-1,400 words total.
 
 Research summaries:
 {summaries}

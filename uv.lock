@@ -289,15 +289,17 @@ wheels = [
 [[package]]
 name = "company-lens"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "chromadb" },
     { name = "fastapi" },
+    { name = "httpx" },
     { name = "openai" },
     { name = "psycopg2-binary" },
     { name = "pydantic-settings" },
     { name = "python-dotenv" },
+    { name = "rich" },
     { name = "scalar-fastapi" },
     { name = "sqlmodel" },
     { name = "sse-starlette" },
@@ -315,10 +317,12 @@ requires-dist = [
     { name = "alembic", specifier = ">=1.18.4" },
     { name = "chromadb", specifier = ">=1.5.9" },
     { name = "fastapi", specifier = ">=0.136.1" },
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "openai", specifier = ">=2.36.0" },
     { name = "psycopg2-binary", specifier = ">=2.9.12" },
     { name = "pydantic-settings", specifier = ">=2.14.1" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
+    { name = "rich", specifier = ">=15.0.0" },
     { name = "scalar-fastapi", specifier = ">=1.8.2" },
     { name = "sqlmodel", specifier = ">=0.0.38" },
     { name = "sse-starlette", specifier = ">=3.4.2" },
