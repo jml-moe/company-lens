@@ -28,7 +28,7 @@ def build_static_queries(company_name: str) -> list[str]:
 def generate_dynamic_queries(company_name: str) -> list[str]:
     ensure_openrouter_configured()
     response = client.beta.chat.completions.parse(
-        model=settings.LLM_MODEL,
+        model=settings.LLM_MODEL_FAST,
         messages=[
             {"role": "system", "content": "You generate targeted web search queries."},
             {"role": "user", "content": QUERY_GENERATION_PROMPT.format(company_name=company_name)},
